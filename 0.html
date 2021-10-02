@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Обязательные метатеги -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="0s.css">
+    
+    <title>Форма опроса</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Основная страница</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Доп. стр.</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<h1>Домашние животные</h1>
+
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+            <img src="https://animalzoom.ru/sites/default/files/izo/domashnie-zhivotnye-1.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://u-f.ru/sites/default/files/styles/main_700/public/domashnie_pitomci.jpg?itok=B4mimj9h" class="d-block w-100">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://otvet.imgsmail.ru/download/u_4d3c53f2d4a01c7770a7622b423b0ed6_800.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://i.pinimg.com/originals/58/6b/3a/586b3aa69fd934bb16b6c0f23aa166a9.jpg" class="d-block w-100">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+            <img src="https://www.culture.ru/storage/images/3a455fc491928aad1ae2d0af24799c4e/3df3bf370c63f221492c7ab514206eae.jpeg" class="d-block w-100">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"  data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Предыдущая</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"  data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Следующая</span>
+    </button>
+</div>
+
+<form>
+
+    <p class="t">У большинства из нас есть домашние животные. Предлагаю Вам рассказать о своем питомце;)</p>
+
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Имя" id="name"></textarea>
+        <label for="floatingTextarea">Ваше имя</label>
+    </div>
+
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="+71234567890" id="phone"></textarea>
+        <label for="floatingTextarea">Ваш номер телефона</label>
+    </div>
+
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Ваша электронная почта</label>
+    </div>
+
+    <div class="form-floating">
+        <textarea class="form-control" placeholder="Имя" id="floatingTextarea"></textarea>
+        <label for="floatingTextarea">Имя Вашего питомца</label>
+    </div>
+
+    <div class="form-floating">
+        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+            <option selected value="0">Не выбрано</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+        </select>
+        <label for="floatingSelect">Сколько лет Вашему питомцу</label>
+    </div>
+
+    <fieldset class="row">
+        <legend class="col-form-label col-sm-2 pt-0">Пол Вашего питомца: </legend>
+        <div class="col">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                <label class="form-check-label" for="gridRadios1">
+                    м
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="gridRadios2">
+                    ж
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="row">
+        <legend class="col-form-label col pt-0">Характер Вашего питомца:</legend>
+        <div class="row">
+            <div class="col">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                        спокойный
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck2">
+                    <label class="form-check-label" for="gridCheck1">
+                        озорной
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck3">
+                    <label class="form-check-label" for="gridCheck1">
+                        ленивый
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck4">
+                    <label class="form-check-label" for="gridCheck1">
+                        ласковый
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck5">
+                    <label class="form-check-label" for="gridCheck1">
+                        энергичный
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck6">
+                    <label class="form-check-label" for="gridCheck1">
+                        недотрога
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"></textarea>
+            <label for="floatingTextarea2">Расскажите еще что-нибудь о Вашем питомце:</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+</form>
+
+</body>
+</html>

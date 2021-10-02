@@ -1,0 +1,29 @@
+form {
+background: LightCyan;
+font-family: mv boli;
+margin-left: 200px;
+margin-right: 200px;
+padding: 10px;
+}
+body {
+background: LightSkyBlue;
+}
+h1{
+font-family: segoe script;
+color: MidnightBlue;
+}
+p.t {
+text-align: center;
+color: SteelBlue;
+font-family: segoe print;
+}
+p {
+font-family: cursive;
+color: MediumBlue;
+}
+h1{
+text-align: center;
+}
+div{
+padding: 5px;
+}
