@@ -137,3 +137,103 @@ masss=[1,2,3,4,5];
 console.log(masss);
 console.log(reverseArrayInPlace(masss));
 console.log(masss);
+//8
+function nth(list, i, j = 1) {
+    if (list["rest"] != null) {
+        if (j != i) {
+            j++
+            list = nth(list["rest"], i, j)
+        } else {
+            return list["value"]
+        }
+        return list
+    }
+    else {
+        if (i > j) {
+            return "undefined"
+        }
+        else {
+            return list["value"]
+        }
+    }
+}
+function prepend(List, val) {
+    let list = {}
+    list["value"] = val
+    list["rest"] = List
+    return list
+}
+function arrayToList(arr) {
+    let List = {"value": arr[arr.length-1], "rest": null};
+    for (let i = arr.length-2; i > -1; i--){
+        List = prepend(List, arr[i])
+    }
+    return List
+}
+function listToArray(List){
+    let arr = []
+    let j = 1
+    while (nth(List, j) != "undefined") {
+        j++
+    }
+    for (let i = 1; i < j; i++){
+        let value = nth(List, i)
+        arr.push(value)
+    }
+    return arr
+}
+let list = arrayToList([1, 2, 3])
+console.log(list)
+console.log(nth(list, 1))
+console.log(nth(list, 2))
+console.log(nth(list, 3))
+console.log(nth(list, 4))
+console.log(listToArray(list))
+//10
+function pack (Arr) {
+    let result = Arr.reduce(function(union, arr_i) {
+        return union.concat(arr_i)
+    },[])
+    return result
+}
+console.log(pack([[1,2,3],[4,5,6]]))
+//11
+function average (arr) {
+    function plus(a, b) {return a + b}
+    return arr.reduce(plus) / arr.length
+}
+let byName = {}
+ancestry = []
+ancestry.forEach(function(person) {
+    byName[person.name] = person
+})
+//12
+function average (arr) {
+    function plus(a, b) {return a + b}
+    return arr.reduce(plus) / arr.length
+}
+//13
+function every (arr, cond) {
+    let b = true
+    for (let i = 0; i < arr.length; i++) {
+        b = b && cond(arr[i])
+        if (!b) {
+            break
+        }
+    }
+    return b
+}
+function some (arr, cond) {
+    let b = false
+    for (let i = 0; i < arr.length; i++) {
+        b = b || cond(arr[i])
+        if (b) {
+            break
+        }
+    }
+    return b
+}
+console.log(every([NaN, NaN, NaN], isNaN))
+console.log(every([NaN, NaN, 4], isNaN))
+console.log(some([NaN, 3, 4], isNaN))
+console.log(some([2, 3, 4], isNaN))
