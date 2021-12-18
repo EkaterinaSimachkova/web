@@ -47,7 +47,6 @@ city1.getCity = getObj;
 city2.getCity = getObj;
 console.log(city1.getCity());
 console.log(city2.getCity());
-
 //6
 let obj = {};
 obj.method3 = function () {
@@ -96,7 +95,25 @@ for (let i = 0; i < n; i++) {
     }
 }
 console.log(d5);
-
+//12
+function Vector(x, y) {
+    this.x = x;
+    this.y = y;
+}
+Vector.prototype.plus = function(vector2) {
+    return new Vector(this.x + vector2.x, this.y + vector2.y);
+};
+Vector.prototype.minus = function(vector2) {
+    return new Vector(this.x - vector2.x, this.y - vector2.y);
+};
+Object.defineProperty(Vector.prototype, 'length', {
+    get() {
+        return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
+    }
+});
+console.log(new Vector(1,2).plus(new Vector(2,3)));
+console.log(new Vector(1,2).minus(new Vector(2,3)));
+console.log(new Vector(3,4).length);
 //15
 function Card(from, to) {
     this.from = from;
@@ -177,3 +194,66 @@ function getDays(year, month) {
     return new Date(year, month, 0).getDate();
 }
 console.log(getDays(2021, 2));
+//22
+Object.defineProperty(Number.prototype, 'isOdd', {
+    get() {
+        return 1 == this.valueOf()%2;
+    }
+});
+console.log(new Number(5).isOdd)
+//23
+function Chain(x) {
+    this.x = x;
+    this.func1 = function() {
+        this.x += 1;
+        return this;
+    };
+}
+Chain.prototype.func2 = function() {
+    this.x += 2;
+    return this;
+};
+Chain.prototype.func3 = function() {
+    this.x += 3;
+    return this;
+};
+b = new Chain(0);
+console.log(b.func1());
+console.log(b.x);
+console.log(b.func1().func2().func3());
+console.log(b.x);
+//24
+function Unit(x, y) {
+    this.x = x;
+    this.y = y;
+    Object.defineProperty(this, 'X', {
+        get() {
+            return this.x;
+        },
+        set(x) {
+            this.x = x;
+        }
+    });
+    Object.defineProperty(this, 'Y', {
+        get() {
+            return this.y;
+        },
+        set(y) {
+            this.y = y;
+        }
+    });
+}
+function Fighter(x, y, power) {
+    Unit.call(this, x, y);
+    this.Power = power;
+    Object.defineProperty(this, 'power', {
+        get() {
+            return this.Power;
+        },
+        set(power) {
+            this.Power = power;
+        }
+    });
+}
+a = new Unit(2, 5, 100);
+console.log(a.y);
